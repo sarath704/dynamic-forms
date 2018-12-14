@@ -1,0 +1,13 @@
+<div
+     [formGroup]="group"
+     [fxLayout]="config.fxLayout"
+     [fxLayout.xs]="config.fxLayoutXs"
+     [fxLayoutAlign]="config.fxLayoutAlign"
+     [fxFlex]="config.fxFlex?.divContainer">
+  <mat-checkbox class="example-margin"
+                [formControl]="fc"
+                [indeterminate]="config.state.indeterminate"
+  >{{config.label}}
+    <!--{{config.label}} (checked: {{config.state.checked}}; disabled: {{config.state.disabled}}; indeterminate: {{config.state.indeterminate}})-->
+  </mat-checkbox>
+</div>

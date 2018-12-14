@@ -1,0 +1,3 @@
+<div fxLayout="row" fxLayoutAlign="center center">
+  <app-dynamic-form *ngIf="config" [config]="config" (submitted)="handleFormSubmit($event)" [initialValues]="formValues"></app-dynamic-form>
+</div>

@@ -1,0 +1,21 @@
+.list-of-controls {
+  padding: 5px;
+  margin: 5px;
+}
+
+.max-height-overflow {
+  border: 1px solid gray;
+  border-radius: 4px;
+
+  max-height: 210px;
+  overflow-y: auto;
+}
+
+
+.flex-100  {
+  flex: 1 1 100%;
+}
+
+.width-100 {
+  width: 100%;
+}

@@ -1,0 +1,17 @@
+<div [formGroup]="group"
+     [fxLayout]="config.fxLayout"
+     [fxLayout.xs]="config.fxLayoutXs"
+     [fxLayoutAlign]="config.fxLayoutAlign"
+     [fxLayoutAlign.xs]="config.fxLayoutAlignXs"
+     [fxLayoutGap]="config.fxLayoutGap">
+  <mat-form-field [fxFlex]="config.fxFlex.select">
+    <mat-select [placeholder]="config.placeholder" [formControl]="fc">
+      <mat-option *ngFor="let option of config.options" [value]="option">
+        {{option}}
+      </mat-option>
+    </mat-select>
+    <ng-container *ngFor="let validation of config.validations" ngProjectAs="mat-error">
+      <mat-error *ngIf="fc.hasError(validation.name)">{{validation.message}}</mat-error>
+    </ng-container>
+  </mat-form-field>
+</div>

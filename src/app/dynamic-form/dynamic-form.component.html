@@ -1,0 +1,15 @@
+<form class="dynamic-form mat-elevation-z5"
+      [formGroup]="form"
+      (ngSubmit)="onSubmit($event)"
+      *ngIf="form"
+      fxLayout="column wrap" fxLayout.xs="column" fxLayoutGap="5px ">
+  <ng-container
+    *ngFor="let field of config"
+    appDynamicField
+    [config]="field"
+    [group]="form"
+    [fc]="form.controls[field.name]"
+  >
+  </ng-container>
+  <ng-content></ng-content>
+</form>

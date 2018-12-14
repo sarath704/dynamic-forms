@@ -1,0 +1,19 @@
+<div [formGroup]="group"
+     [fxLayout]="config.fxLayout"
+     [fxLayout.xs]="config.fxLayoutXs"
+     [fxLayoutAlign]="config.fxLayoutAlign"
+     [fxLayoutAlign.xs]="config.fxLayoutAlignXs"
+     [fxLayoutGap]="config.fxLayoutGap">
+  <mat-form-field class="example-full-width">
+    <input type="text" aria-label="Number" matInput [placeholder]="config.placeholder" [formControl]="fc"
+           [matAutocomplete]="auto">
+    <mat-autocomplete #auto="matAutocomplete">
+      <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+        {{option}}
+      </mat-option>
+    </mat-autocomplete>
+    <ng-container *ngFor="let validation of config.validations" ngProjectAs="mat-error">
+      <mat-error *ngIf="fc.hasError(validation.name)">{{validation.message}}</mat-error>
+    </ng-container>
+  </mat-form-field>
+</div>
