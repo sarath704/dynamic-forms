@@ -17,7 +17,6 @@ export class ListOfControlsComponent implements OnInit {
 
   ngOnInit() {
     // apply classes on self
-    // this._classes = (this.config.classes && this.config.classes.container) ?  this.config.classes.container + ' width-100' : 'width-100';
     this._classes = (this.config.classes && this.config.classes.container) ?  this.config.classes.container : '';
   }
 }

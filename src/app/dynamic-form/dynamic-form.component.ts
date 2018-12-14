@@ -81,8 +81,6 @@ export class DynamicFormComponent implements OnInit, AfterContentInit {
           let subgroup = this.fb.group({});
           subgroup = this.addControlsBasedOnConfig(field.controls, subgroup);
           group.addControl(field.name, subgroup);
-          console.log(`subgroup`, subgroup);
-          console.log(`group`, group);
           break;
         default:
           control = new FormControl(field.value || '', this.composeValidators(field.validations || []));
