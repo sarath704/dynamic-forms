@@ -1,0 +1,96 @@
+{
+    "_id" : ObjectId("5c0e849cd270312e0e11f648"),
+    "templateId" : "2",
+    "templateContent" : [ 
+        {
+            "type" : "input",
+            "name" : "name",
+            "placeholder" : "Enter your Friend name",
+            "validations" : [ 
+                {
+                    "name" : "required",
+                    "type" : "required",
+                    "message" : "Friend Name Required"
+                }
+            ],
+            "fxLayout" : "row",
+            "fxLayoutXs" : "column",
+            "fxLayoutAlign" : " center center",
+            "fxLayoutAlignXs" : "center stretch",
+            "fxLayoutGap" : "10px",
+            "fxFlex" : {
+                "label" : "0 0 auto",
+                "input" : "1 1 auto"
+            }
+        }, 
+        {
+            "type" : "select",
+            "name" : "sport",
+            "options" : [ 
+                "Laptenis", 
+                "Soccer", 
+                "Bowling", 
+                "Sitting"
+            ],
+            "placeholder" : "Select an option",
+            "validations" : [ 
+                {
+                    "name" : "required",
+                    "type" : "required",
+                    "message" : "Selection Required"
+                }
+            ],
+            "fxLayout" : "row",
+            "fxLayoutXs" : "column",
+            "fxLayoutAlign" : " center center",
+            "fxLayoutAlignXs" : "center stretch",
+            "fxLayoutGap" : "10px",
+            "fxFlex" : {
+                "label" : "0 0 auto",
+                "select" : "1 1 auto"
+            }
+        }, 
+        {
+            "type" : "selectAutocomplete",
+            "name" : "animal",
+            "options" : [ 
+                "Rabit", 
+                "Dog", 
+                "Cow", 
+                "Dragon"
+            ],
+            "placeholder" : "Favourite animal",
+            "validations" : [ 
+                {
+                    "name" : "required",
+                    "type" : "required",
+                    "message" : "Selection Required"
+                }
+            ],
+            "fxLayout" : "row",
+            "fxLayoutXs" : "column",
+            "fxLayoutAlign" : " center center",
+            "fxLayoutAlignXs" : "center stretch",
+            "fxLayoutGap" : "10px",
+            "fxFlex" : {
+                "label" : "0 0 auto",
+                "select" : "1 1 auto"
+            }
+        }, 
+        {
+            "label" : "Submit",
+            "name" : "submit",
+            "type" : "button",
+            "color" : "primary",
+            "fxLayout" : "row",
+            "fxLayoutXs" : "row",
+            "fxLayoutAlign" : "center center",
+            "fxFlex" : {
+                "button" : "0 0 auto",
+                "xs" : {
+                    "button" : "1 1 auto"
+                }
+            }
+        }
+    ]
+}

@@ -1,0 +1,95 @@
+{
+    "_id" : ObjectId("5c0e8462d270312e0e11f60c"),
+    "templateId" : "1",
+    "templateContent" : [ 
+        {
+            "type" : "input",
+            "label" : "",
+            "name" : "name",
+            "placeholder" : "Enter your name",
+            "validations" : [ 
+                {
+                    "name" : "required",
+                    "type" : "required",
+                    "message" : "Full Name Required"
+                }, 
+                {
+                    "name" : "pattern",
+                    "type" : "pattern",
+                    "expression" : "^[a-zA-Z]+$",
+                    "message" : "Accept only text"
+                }
+            ],
+            "fxLayout" : "row",
+            "fxLayoutXs" : "column",
+            "fxLayoutAlign" : " center center",
+            "fxLayoutAlignXs" : "center stretch",
+            "fxLayoutGap" : "10px",
+            "fxFlex" : {
+                "label" : "0 0 auto",
+                "input" : "1 1 auto"
+            }
+        }, 
+        {
+            "type" : "select",
+            "label" : "",
+            "name" : "food",
+            "options" : [ 
+                "Food1", 
+                "Food2", 
+                "Food3", 
+                "Food4"
+            ],
+            "placeholder" : "Select favourite food",
+            "validations" : [ 
+                {
+                    "name" : "required",
+                    "type" : "required",
+                    "message" : "Favourite food Required"
+                }
+            ],
+            "fxLayout" : "row",
+            "fxLayoutXs" : "column",
+            "fxLayoutAlign" : " center center",
+            "fxLayoutAlignXs" : "center stretch",
+            "fxLayoutGap" : "10px",
+            "fxFlex" : {
+                "label" : "0 0 auto",
+                "select" : "1 1 auto"
+            }
+        }, 
+        {
+            "type" : "checkbox",
+            "label" : "Column title 1",
+            "name" : "column1",
+            "state" : {
+                "indeterminate" : false,
+                "disabled" : false,
+                "checked" : true
+            },
+            "color" : "accent",
+            "classes" : {
+                "container" : "flex-100"
+            }
+        }, 
+        {
+            "label" : "Submit",
+            "name" : "submit",
+            "type" : "button",
+            "color" : "accent",
+            "classes" : {
+                "container" : "flex-100"
+            },
+            "fxLayout" : "row",
+            "fxLayoutXs" : "row",
+            "fxLayoutAlign" : "center center",
+            "fxFlex" : {
+                "divContainer" : "1 1 100",
+                "button" : "0 0 auto",
+                "xs" : {
+                    "button" : "1 1 auto"
+                }
+            }
+        }
+    ]
+}

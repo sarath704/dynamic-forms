@@ -1,0 +1,489 @@
+{
+    "_id" : ObjectId("5c13b49ad270312e0e1533af"),
+    "templateId" : "5",
+    "templateContent" : [ 
+        {
+            "type" : "subGroup",
+            "name" : "subgroup1",
+            "fxLayout" : "column",
+            "fxLayoutAlign" : "start stretch",
+            "classes" : {
+                "container" : "flex-100"
+            },
+            "controls" : [ 
+                {
+                    "type" : "input",
+                    "value" : "Change 1",
+                    "name" : "name",
+                    "placeholder" : "Enter Change Name",
+                    "validations" : [ 
+                        {
+                            "name" : "required",
+                            "type" : "required",
+                            "message" : "Change Name Required"
+                        }
+                    ],
+                    "fxLayout" : "row",
+                    "fxLayoutXs" : "column",
+                    "fxLayoutAlign" : " center stretch",
+                    "fxLayoutAlignXs" : "center stretch",
+                    "fxLayoutGap" : "10px",
+                    "fxFlex" : {
+                        "label" : "0 0 auto",
+                        "input" : "1 1 auto"
+                    }
+                }, 
+                {
+                    "type" : "subGroup",
+                    "name" : "subgroup11",
+                    "fxLayout" : "column",
+                    "fxLayoutAlign" : "start stretch",
+                    "classes" : {
+                        "container" : "flex-100",
+                        "divContainer" : "max-height-overflow"
+                    },
+                    "controls" : [ 
+                        {
+                            "type" : "checkbox",
+                            "label" : "Column title 1",
+                            "name" : "column1",
+                            "state" : {
+                                "indeterminate" : false,
+                                "disabled" : false,
+                                "checked" : true
+                            },
+                            "color" : "accent",
+                            "classes" : {
+                                "container" : "flex-100"
+                            }
+                        }, 
+                        {
+                            "type" : "checkbox",
+                            "label" : "Column title 2",
+                            "name" : "column2",
+                            "state" : {
+                                "indeterminate" : false,
+                                "disabled" : true,
+                                "checked" : false
+                            },
+                            "color" : "accent",
+                            "classes" : {
+                                "container" : "flex-100"
+                            }
+                        }, 
+                        {
+                            "type" : "checkbox",
+                            "label" : "Column title 3",
+                            "name" : "column3",
+                            "state" : {
+                                "indeterminate" : false,
+                                "disabled" : false,
+                                "checked" : false
+                            },
+                            "color" : "accent",
+                            "classes" : {
+                                "container" : "flex-100"
+                            }
+                        }, 
+                        {
+                            "type" : "checkbox",
+                            "label" : "Column title 4",
+                            "name" : "column4",
+                            "state" : {
+                                "indeterminate" : false,
+                                "disabled" : false,
+                                "checked" : false
+                            },
+                            "color" : "accent",
+                            "classes" : {
+                                "container" : "flex-100"
+                            }
+                        }, 
+                        {
+                            "type" : "checkbox",
+                            "label" : "Column title 5",
+                            "name" : "column5",
+                            "state" : {
+                                "indeterminate" : true,
+                                "disabled" : false,
+                                "checked" : false
+                            },
+                            "color" : "accent",
+                            "classes" : {
+                                "container" : "flex-100"
+                            }
+                        }, 
+                        {
+                            "type" : "checkbox",
+                            "label" : "Column title 6",
+                            "name" : "column6",
+                            "state" : {
+                                "indeterminate" : false,
+                                "disabled" : true,
+                                "checked" : true
+                            },
+                            "color" : "accent",
+                            "classes" : {
+                                "container" : "flex-100"
+                            }
+                        }, 
+                        {
+                            "type" : "checkbox",
+                            "label" : "Column title 7",
+                            "name" : "column7",
+                            "state" : {
+                                "indeterminate" : false,
+                                "disabled" : false,
+                                "checked" : false
+                            },
+                            "color" : "accent",
+                            "classes" : {
+                                "container" : "flex-100"
+                            }
+                        }, 
+                        {
+                            "type" : "checkbox",
+                            "label" : "Column title 8",
+                            "name" : "column8",
+                            "state" : {
+                                "indeterminate" : false,
+                                "disabled" : false,
+                                "checked" : false
+                            },
+                            "color" : "accent",
+                            "classes" : {
+                                "container" : "flex-100"
+                            }
+                        }, 
+                        {
+                            "type" : "checkbox",
+                            "label" : "Column title 9",
+                            "name" : "column9",
+                            "state" : {
+                                "indeterminate" : false,
+                                "disabled" : true,
+                                "checked" : false
+                            },
+                            "color" : "accent",
+                            "classes" : {
+                                "container" : "flex-100"
+                            }
+                        }, 
+                        {
+                            "type" : "checkbox",
+                            "label" : "Column title 10",
+                            "name" : "column10",
+                            "state" : {
+                                "indeterminate" : false,
+                                "disabled" : false,
+                                "checked" : false
+                            },
+                            "color" : "accent",
+                            "classes" : {
+                                "container" : "flex-100"
+                            }
+                        }, 
+                        {
+                            "type" : "checkbox",
+                            "label" : "Column title 11",
+                            "name" : "column11",
+                            "state" : {
+                                "indeterminate" : false,
+                                "disabled" : false,
+                                "checked" : false
+                            },
+                            "color" : "accent",
+                            "classes" : {
+                                "container" : "flex-100"
+                            }
+                        }
+                    ]
+                }
+            ]
+        }, 
+        {
+            "type" : "subGroup",
+            "name" : "subgroup2",
+            "fxLayout" : "column",
+            "fxLayoutAlign" : "start stretch",
+            "classes" : {
+                "container" : "flex-100"
+            },
+            "controls" : [ 
+                {
+                    "type" : "input",
+                    "value" : "Change 2",
+                    "name" : "name",
+                    "placeholder" : "Enter Change Name",
+                    "validations" : [ 
+                        {
+                            "name" : "required",
+                            "type" : "required",
+                            "message" : "Change Name Required"
+                        }
+                    ],
+                    "fxLayout" : "row",
+                    "fxLayoutXs" : "column",
+                    "fxLayoutAlign" : " center center",
+                    "fxLayoutAlignXs" : "center stretch",
+                    "fxLayoutGap" : "10px",
+                    "fxFlex" : {
+                        "label" : "0 0 auto",
+                        "input" : "1 1 auto"
+                    }
+                }, 
+                {
+                    "type" : "subGroup",
+                    "name" : "subgroup21",
+                    "fxLayout" : "column",
+                    "fxLayoutAlign" : "start stretch",
+                    "classes" : {
+                        "container" : "flex-100",
+                        "divContainer" : "max-height-overflow"
+                    },
+                    "controls" : [ 
+                        {
+                            "type" : "input",
+                            "label" : "",
+                            "name" : "name",
+                            "placeholder" : "Enter your name",
+                            "validations" : [ 
+                                {
+                                    "name" : "required",
+                                    "type" : "required",
+                                    "message" : "Full Name Required"
+                                }, 
+                                {
+                                    "name" : "pattern",
+                                    "type" : "pattern",
+                                    "expression" : "^[a-zA-Z]+$",
+                                    "message" : "Accept only text"
+                                }
+                            ],
+                            "fxLayout" : "row",
+                            "fxLayoutXs" : "column",
+                            "fxLayoutAlign" : " center center",
+                            "fxLayoutAlignXs" : "center stretch",
+                            "fxLayoutGap" : "10px",
+                            "fxFlex" : {
+                                "label" : "0 0 auto",
+                                "input" : "1 1 auto"
+                            }
+                        }, 
+                        {
+                            "type" : "select",
+                            "label" : "",
+                            "name" : "food",
+                            "options" : [ 
+                                "Food1", 
+                                "Food2", 
+                                "Food3", 
+                                "Food4"
+                            ],
+                            "placeholder" : "Select favourite food",
+                            "validations" : [ 
+                                {
+                                    "name" : "required",
+                                    "type" : "required",
+                                    "message" : "Favourite food Required"
+                                }
+                            ],
+                            "fxLayout" : "row",
+                            "fxLayoutXs" : "column",
+                            "fxLayoutAlign" : " center center",
+                            "fxLayoutAlignXs" : "center stretch",
+                            "fxLayoutGap" : "10px",
+                            "fxFlex" : {
+                                "label" : "0 0 auto",
+                                "select" : "1 1 auto"
+                            }
+                        }, 
+                        {
+                            "type" : "checkbox",
+                            "label" : "Column title 1",
+                            "name" : "column1",
+                            "state" : {
+                                "indeterminate" : false,
+                                "disabled" : false,
+                                "checked" : true
+                            },
+                            "color" : "accent",
+                            "classes" : {
+                                "container" : "flex-100"
+                            }
+                        }, 
+                        {
+                            "type" : "checkbox",
+                            "label" : "Column title 1",
+                            "name" : "column1",
+                            "state" : {
+                                "indeterminate" : false,
+                                "disabled" : false,
+                                "checked" : true
+                            },
+                            "color" : "accent",
+                            "classes" : {
+                                "container" : "flex-100"
+                            }
+                        }, 
+                        {
+                            "type" : "checkbox",
+                            "label" : "Column title 2",
+                            "name" : "column2",
+                            "state" : {
+                                "indeterminate" : false,
+                                "disabled" : true,
+                                "checked" : false
+                            },
+                            "color" : "accent",
+                            "classes" : {
+                                "container" : "flex-100"
+                            }
+                        }, 
+                        {
+                            "type" : "checkbox",
+                            "label" : "Column title 3",
+                            "name" : "column3",
+                            "state" : {
+                                "indeterminate" : false,
+                                "disabled" : false,
+                                "checked" : false
+                            },
+                            "color" : "accent",
+                            "classes" : {
+                                "container" : "flex-100"
+                            }
+                        }, 
+                        {
+                            "type" : "checkbox",
+                            "label" : "Column title 4",
+                            "name" : "column4",
+                            "state" : {
+                                "indeterminate" : false,
+                                "disabled" : false,
+                                "checked" : false
+                            },
+                            "color" : "accent",
+                            "classes" : {
+                                "container" : "flex-100"
+                            }
+                        }, 
+                        {
+                            "type" : "checkbox",
+                            "label" : "Column title 5",
+                            "name" : "column5",
+                            "state" : {
+                                "indeterminate" : true,
+                                "disabled" : false,
+                                "checked" : false
+                            },
+                            "color" : "accent",
+                            "classes" : {
+                                "container" : "flex-100"
+                            }
+                        }, 
+                        {
+                            "type" : "checkbox",
+                            "label" : "Column title 6",
+                            "name" : "column6",
+                            "state" : {
+                                "indeterminate" : false,
+                                "disabled" : true,
+                                "checked" : true
+                            },
+                            "color" : "accent",
+                            "classes" : {
+                                "container" : "flex-100"
+                            }
+                        }, 
+                        {
+                            "type" : "checkbox",
+                            "label" : "Column title 7",
+                            "name" : "column7",
+                            "state" : {
+                                "indeterminate" : false,
+                                "disabled" : false,
+                                "checked" : false
+                            },
+                            "color" : "accent",
+                            "classes" : {
+                                "container" : "flex-100"
+                            }
+                        }, 
+                        {
+                            "type" : "checkbox",
+                            "label" : "Column title 8",
+                            "name" : "column8",
+                            "state" : {
+                                "indeterminate" : false,
+                                "disabled" : false,
+                                "checked" : false
+                            },
+                            "color" : "accent",
+                            "classes" : {
+                                "container" : "flex-100"
+                            }
+                        }, 
+                        {
+                            "type" : "checkbox",
+                            "label" : "Column title 9",
+                            "name" : "column9",
+                            "state" : {
+                                "indeterminate" : false,
+                                "disabled" : true,
+                                "checked" : false
+                            },
+                            "color" : "accent",
+                            "classes" : {
+                                "container" : "flex-100"
+                            }
+                        }, 
+                        {
+                            "type" : "checkbox",
+                            "label" : "Column title 10",
+                            "name" : "column10",
+                            "state" : {
+                                "indeterminate" : false,
+                                "disabled" : false,
+                                "checked" : false
+                            },
+                            "color" : "accent",
+                            "classes" : {
+                                "container" : "flex-100"
+                            }
+                        }, 
+                        {
+                            "type" : "checkbox",
+                            "label" : "Column title 11",
+                            "name" : "column11",
+                            "state" : {
+                                "indeterminate" : false,
+                                "disabled" : false,
+                                "checked" : false
+                            },
+                            "color" : "accent",
+                            "classes" : {
+                                "container" : "flex-100"
+                            }
+                        }
+                    ]
+                }
+            ]
+        }, 
+        {
+            "label" : "Submit",
+            "name" : "submit",
+            "type" : "button",
+            "color" : "accent",
+            "fxLayout" : "row",
+            "fxLayoutXs" : "row",
+            "fxLayoutAlign" : "center center",
+            "fxFlex" : {
+                "button" : "0 0 auto",
+                "xs" : {
+                    "button" : "1 1 auto"
+                }
+            }
+        }
+    ]
+}

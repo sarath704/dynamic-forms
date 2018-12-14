@@ -1,0 +1,119 @@
+{
+    "_id" : ObjectId("5c0f9788d270312e0e12e2a6"),
+    "templateId" : "3",
+    "templateContent" : [ 
+        {
+            "type" : "checkbox",
+            "label" : "Column title 1",
+            "name" : "column1",
+            "state" : {
+                "indeterminate" : false,
+                "disabled" : false,
+                "checked" : true
+            },
+            "color" : "accent",
+            "classes" : {
+                "container" : "flex-100"
+            }
+        }, 
+        {
+            "type" : "checkbox",
+            "label" : "Column title 2",
+            "name" : "column2",
+            "state" : {
+                "indeterminate" : false,
+                "disabled" : false,
+                "checked" : false
+            },
+            "color" : "accent",
+            "classes" : {
+                "container" : "flex-100"
+            }
+        }, 
+        {
+            "type" : "checkbox",
+            "label" : "Column title 3",
+            "name" : "column3",
+            "state" : {
+                "indeterminate" : true,
+                "disabled" : false,
+                "checked" : false
+            },
+            "color" : "accent",
+            "classes" : {
+                "container" : "flex-100"
+            }
+        }, 
+        {
+            "type" : "checkbox",
+            "label" : "Column title 4",
+            "name" : "column4",
+            "state" : {
+                "indeterminate" : false,
+                "disabled" : true,
+                "checked" : true
+            },
+            "color" : "accent",
+            "classes" : {
+                "container" : "flex-100"
+            }
+        }, 
+        {
+            "type" : "checkbox",
+            "label" : "Column title 5",
+            "name" : "column5",
+            "state" : {
+                "indeterminate" : false,
+                "disabled" : false,
+                "checked" : true
+            },
+            "color" : "accent",
+            "classes" : {
+                "container" : "flex-100"
+            }
+        }, 
+        {
+            "type" : "checkbox",
+            "label" : "Column title 6",
+            "name" : "column6",
+            "state" : {
+                "indeterminate" : false,
+                "disabled" : true,
+                "checked" : false
+            },
+            "color" : "accent",
+            "classes" : {
+                "container" : "flex-100"
+            }
+        }, 
+        {
+            "type" : "checkbox",
+            "label" : "Column title 7",
+            "name" : "column7",
+            "state" : {
+                "indeterminate" : true,
+                "disabled" : true,
+                "checked" : false
+            },
+            "color" : "accent",
+            "classes" : {
+                "container" : "flex-100"
+            }
+        }, 
+        {
+            "label" : "Save",
+            "name" : "submit",
+            "type" : "button",
+            "color" : "primary",
+            "fxLayout" : "row",
+            "fxLayoutXs" : "row",
+            "fxLayoutAlign" : "center center",
+            "fxFlex" : {
+                "button" : "0 0 auto",
+                "xs" : {
+                    "button" : "1 1 auto"
+                }
+            }
+        }
+    ]
+}
