@@ -1,7 +1,7 @@
 <form class="dynamic-form mat-elevation-z5"
       [formGroup]="form"
       (ngSubmit)="onSubmit($event)"
-      *ngIf="form"
+      *ngIf="form && config"
       fxLayout="column wrap" fxLayout.xs="column" fxLayoutGap="5px ">
   <ng-container
     *ngFor="let field of config"

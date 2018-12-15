@@ -1,7 +1,58 @@
 {
     "_id" : ObjectId("5c13b49ad270312e0e1533af"),
     "templateId" : "5",
-    "templateContent" : [ 
+    "templateContent" : [
+    	{
+    		type: "subGroup",
+    		name: "configSetter",
+    		"fxLayout" : "column",
+            "fxLayoutAlign" : "start stretch",
+            "controls": [
+            			{
+                            "type" : "select",
+                            "label" : "",
+                            "name" : "food",
+                            "options" : [ 
+                                "Food1", 
+                                "Food2", 
+                                "Food3", 
+                                "Food4"
+                            ],
+                            "placeholder" : "Select favourite food",
+                            "validations" : [ 
+                                {
+                                    "name" : "required",
+                                    "type" : "required",
+                                    "message" : "Favourite food Required"
+                                }
+                            ],
+                            "fxLayout" : "row",
+                            "fxLayoutXs" : "column",
+                            "fxLayoutAlign" : " center center",
+                            "fxLayoutAlignXs" : "center stretch",
+                            "fxLayoutGap" : "10px",
+                            "fxFlex" : {
+                                "label" : "0 0 auto",
+                                "select" : "1 1 auto"
+                            }
+                        }, 
+                        {
+					            "label" : "Change Config",
+					            "name" : "commit",
+					            "type" : "button",
+					            "color" : "accent",
+					            "fxLayout" : "row",
+					            "fxLayoutXs" : "row",
+					            "fxLayoutAlign" : "center center",
+					            "fxFlex" : {
+					                "button" : "0 0 auto",
+					                "xs" : {
+					                    "button" : "1 1 auto"
+					                }
+					            }
+					        }
+            ]
+    	},
         {
             "type" : "subGroup",
             "name" : "subgroup1",
@@ -40,7 +91,7 @@
                     "fxLayoutAlign" : "start stretch",
                     "classes" : {
                         "container" : "flex-100",
-                        "divContainer" : "max-height-overflow"
+                        "divContainer" : "max-height-overflow height-210"
                     },
                     "controls" : [ 
                         {
@@ -239,7 +290,7 @@
                     "fxLayoutAlign" : "start stretch",
                     "classes" : {
                         "container" : "flex-100",
-                        "divContainer" : "max-height-overflow"
+                        "divContainer" : "max-height-overflow height-315"
                     },
                     "controls" : [ 
                         {

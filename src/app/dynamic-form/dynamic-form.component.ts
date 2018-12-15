@@ -1,7 +1,7 @@
-import { AfterContentInit, Component, EventEmitter, HostBinding, Input, OnInit, Output } from '@angular/core';
+import { AfterContentInit, ChangeDetectorRef, Component, EventEmitter, HostBinding, Input, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, ValidatorFn, Validators } from '@angular/forms';
 import { Observable, timer } from 'rxjs';
-import { pluck, retry } from 'rxjs/operators';
+import { pluck, retry, take } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
 
 @Component({
@@ -15,15 +15,30 @@ export class DynamicFormComponent implements OnInit, AfterContentInit {
   @Input() initialValues: any;
   @Output() submitted: EventEmitter<any> = new EventEmitter<any>();
   @HostBinding('class.dynamic-form-container') _class = true;
+  @Output() formCreated: EventEmitter<FormGroup> = new EventEmitter<FormGroup>();
 
   public form: FormGroup;
 
   constructor(private fb: FormBuilder,
-              private http: HttpClient) {
+              private http: HttpClient,
+              private changeDetector: ChangeDetectorRef) {
   }
 
   ngOnInit() {
     this.grabConfigFromServerIfConfigIdReceivedFromParent();
+
+    this.formCreated.emit(this.form);
+
+    timer(5000, 5000)
+      .pipe(
+        take(5)
+      )
+      .subscribe(() => {
+        const newConfig = 'Config' + (Math.floor(Math.random() * 4) + 1);
+        console.log(newConfig);
+        this.changeConfig(newConfig);
+      });
+
   }
 
   ngAfterContentInit(): void {
@@ -145,4 +160,29 @@ export class DynamicFormComponent implements OnInit, AfterContentInit {
     });
   }
 
+  changeConfig(configSelected) {
+    switch (configSelected) {
+      case 'Config1':
+        this.configId = '1';
+        break;
+      case 'Config2':
+        this.configId = '2';
+        break;
+      case 'Config3':
+        this.configId = '3';
+        break;
+      case 'Config4':
+        this.configId = '4';
+        break;
+      case 'Config5':
+        this.configId = '5';
+        break;
+    }
+
+    this.config = null;
+    this.changeDetector.detectChanges();
+    // this.form = null;
+    this.grabConfigFromServerIfConfigIdReceivedFromParent();
+
+  }
 }
