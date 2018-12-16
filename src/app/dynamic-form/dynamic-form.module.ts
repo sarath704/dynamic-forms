@@ -12,6 +12,7 @@ import { MaterialModule } from '../material.module';
 import { FormSelectAutocompleteComponent } from './components/form-select-autocomplete/form-select-autocomplete.component';
 import { FormCheckboxComponent } from './components/form-checkbox/form-checkbox.component';
 import { ListOfControlsComponent } from './components/list-of-controls/list-of-controls.component';
+import { FormRadioButtonsGroupComponent } from './components/form-radio-buttons-group/form-radio-buttons-group.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { ListOfControlsComponent } from './components/list-of-controls/list-of-c
     FormSelectAutocompleteComponent,
     FormCheckboxComponent,
     ListOfControlsComponent,
+    FormRadioButtonsGroupComponent,
   ],
   imports: [
     BrowserModule,
@@ -40,7 +42,8 @@ import { ListOfControlsComponent } from './components/list-of-controls/list-of-c
     FormSelectComponent,
     FormSelectAutocompleteComponent,
     FormCheckboxComponent,
-    ListOfControlsComponent
+    ListOfControlsComponent,
+    FormRadioButtonsGroupComponent
   ]
 })
 export class DynamicFormModule {}

@@ -1,5 +1,3 @@
-
-
 .dynamic-form {
   min-height: 100px;
   padding: 10px;
@@ -22,4 +20,12 @@
 
 .width-100 {
   width: 100%;
+}
+
+.label {
+  // angular-material used font
+  font-family: Roboto ,"Helvetica Neue",sans-serif;
+  font-size: 12px;
+  margin-bottom: 8px;
+  color: #757575;
 }

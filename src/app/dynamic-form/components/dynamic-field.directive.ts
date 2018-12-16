@@ -6,6 +6,7 @@ import { FormButtonComponent } from './form-button/form-button.component';
 import { FormSelectAutocompleteComponent } from './form-select-autocomplete/form-select-autocomplete.component';
 import { FormCheckboxComponent } from './form-checkbox/form-checkbox.component';
 import { ListOfControlsComponent } from './list-of-controls/list-of-controls.component';
+import { FormRadioButtonsGroupComponent } from './form-radio-buttons-group/form-radio-buttons-group.component';
 
 const components = {
   input: FormInputComponent,
@@ -13,7 +14,8 @@ const components = {
   button: FormButtonComponent,
   selectAutocomplete: FormSelectAutocompleteComponent,
   checkbox: FormCheckboxComponent,
-  subGroup: ListOfControlsComponent
+  subGroup: ListOfControlsComponent,
+  radioGroup: FormRadioButtonsGroupComponent
 };
 
 

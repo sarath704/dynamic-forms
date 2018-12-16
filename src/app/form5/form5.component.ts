@@ -1,8 +1,8 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { ActivatedRoute } from '@angular/router';
-import { Observable, timer } from 'rxjs';
-import { pluck, retry } from 'rxjs/operators';
+import { Observable, Subject, timer } from 'rxjs';
+import { pluck, retry, takeUntil } from 'rxjs/operators';
 import { FormGroup } from '@angular/forms';
 
 @Component({
@@ -10,10 +10,12 @@ import { FormGroup } from '@angular/forms';
   templateUrl: './form5.component.html',
   styleUrls: ['./form5.component.scss']
 })
-export class Form5Component implements OnInit {
+export class Form5Component implements OnInit, OnDestroy {
   @Input() templateId;
   public config: any;
   public createdForm: FormGroup;
+
+  private onDestroy$: Subject<any> = new Subject<any>();
 
   constructor(private http: HttpClient, private activatedRoute: ActivatedRoute) {
   }
@@ -30,14 +32,16 @@ export class Form5Component implements OnInit {
     });
 
 
-    // programatically modify content of the dynamic form
+    // programmatically modify content of the dynamic form
     timer(3000)
+      .pipe(takeUntil(this.onDestroy$))
       .subscribe(() => {
         console.log(`Removing second group`);
         this.config.splice(2, 1);
       });
 
     timer(6000)
+      .pipe(takeUntil(this.onDestroy$))
       .subscribe(() => {
         console.log(`Removing checkbox 1 from first group`);
         const removedChild = { ...this.config[1].controls[1].controls[1] };
@@ -49,9 +53,10 @@ export class Form5Component implements OnInit {
       });
 
     timer(3000)
+      .pipe(takeUntil(this.onDestroy$))
       .subscribe(() => {
         const res = this.createdForm.patchValue({tada: 1, baba: 2});
-        console.log(`patchResult: `, res);
+        console.log(`setting form properties that don't exist using patchValue: `, res);
       });
   }
 
@@ -69,6 +74,10 @@ export class Form5Component implements OnInit {
 
   handleFormCreation(form: FormGroup): void {
     this.createdForm = form;
+  }
+
+  ngOnDestroy(): void {
+    this.onDestroy$.next(true);
   }
 }
 

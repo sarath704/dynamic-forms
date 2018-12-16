@@ -1,16 +1,16 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { FormGroup } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
 import { debounceTime, filter, pluck, retry } from 'rxjs/operators';
-import { FormGroup } from '@angular/forms';
 
 @Component({
-  selector: 'app-form4',
-  templateUrl: './form4.component.html',
-  styleUrls: ['./form4.component.scss']
+  selector: 'app-form6',
+  templateUrl: './form6.component.html',
+  styleUrls: ['./form6.component.scss']
 })
-export class Form4Component implements OnInit {
+export class Form6Component implements OnInit {
   @Input() templateId;
   public config: any;
   public createdForm: FormGroup;

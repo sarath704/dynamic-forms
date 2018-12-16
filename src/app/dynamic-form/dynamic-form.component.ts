@@ -1,13 +1,24 @@
-import { AfterContentInit, ChangeDetectorRef, Component, EventEmitter, HostBinding, Input, OnInit, Output } from '@angular/core';
+import {
+  AfterContentInit,
+  ChangeDetectorRef,
+  Component,
+  EventEmitter,
+  HostBinding,
+  Input,
+  OnInit,
+  Output,
+  ViewEncapsulation
+} from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, ValidatorFn, Validators } from '@angular/forms';
 import { Observable, timer } from 'rxjs';
-import { pluck, retry, take } from 'rxjs/operators';
+import { pluck, retry } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-dynamic-form',
   templateUrl: './dynamic-form.component.html',
-  styleUrls: ['./dynamic-form.component.scss']
+  styleUrls: ['./dynamic-form.component.scss'],
+  encapsulation: ViewEncapsulation.Emulated
 })
 export class DynamicFormComponent implements OnInit, AfterContentInit {
   @Input() config: any[] = [];
@@ -28,16 +39,16 @@ export class DynamicFormComponent implements OnInit, AfterContentInit {
     this.grabConfigFromServerIfConfigIdReceivedFromParent();
 
     this.formCreated.emit(this.form);
-/*
-    timer(5000, 5000)
-      .pipe(
-        take(5)
-      )
-      .subscribe(() => {
-        const newConfig = 'Config' + (Math.floor(Math.random() * 4) + 1);
-        console.log(newConfig);
-        this.changeConfig(newConfig);
-      });*/
+    /*
+        timer(5000, 5000)
+          .pipe(
+            take(5)
+          )
+          .subscribe(() => {
+            const newConfig = 'Config' + (Math.floor(Math.random() * 4) + 1);
+            console.log(newConfig);
+            this.changeConfig(newConfig);
+          });*/
 
   }
 
@@ -97,6 +108,19 @@ export class DynamicFormComponent implements OnInit, AfterContentInit {
           subgroup = this.addControlsBasedOnConfig(field.controls, subgroup);
           group.addControl(field.name, subgroup);
           break;
+
+/*
+        case 'radioGroup':
+          control = new FormControl({
+              value: '',
+              disabled: field.state.disabled,
+              // required: field.state.required
+            },
+            this.composeValidators(field.validations || []));
+          group.addControl(field.name, control);
+          break;
+*/
+
         default:
           control = new FormControl(field.value || '', this.composeValidators(field.validations || []));
           group.addControl(field.name, control);

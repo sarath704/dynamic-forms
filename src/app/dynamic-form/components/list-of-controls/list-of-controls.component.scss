@@ -1,3 +1,5 @@
+@import "../../dynamic-forms-general-styles.scss";
+
 .list-of-controls {
   padding: 5px;
   margin: 5px;
@@ -22,7 +24,6 @@
 .height-420 {
   max-height: 420px;
 }
-
 
 .flex-100  {
   flex: 1 1 100%;

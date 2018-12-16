@@ -1,0 +1,21 @@
+<div [formGroup]="group"
+     fxLayout="row"
+     fxLayoutAlign="start center"
+     style="padding: 5px">
+  <div fxLayout="column" fxLayoutAlign="center start" fxLayoutGap="10px">
+    <label [ngClass]="{'label': true, 'material-color-disabled': config.state.disabled}" *ngIf="config.label">{{config.label}}</label>
+    <mat-radio-group [required]="config.state?.required"
+                     [value]="config.value"
+                     [name]="config.name"
+                     [formControl]="fc"
+                     fxLayout="column"
+                     fxLayoutGap="5px">
+      <mat-radio-button style="margin: 5px" *ngFor="let option of config.options" [value]="option">
+        {{option}}
+      </mat-radio-button>
+      <ng-container *ngFor="let validation of config.validations" ngProjectAs="mat-error">
+        <mat-error class="material-font margin-top-5px" *ngIf="fc.hasError(validation.name)">{{validation.message}}</mat-error>
+      </ng-container>
+    </mat-radio-group>
+  </div>
+</div>
