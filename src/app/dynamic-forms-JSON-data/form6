@@ -1,0 +1,98 @@
+{
+    "_id" : ObjectId("5c167b2bd270312e0e175762"),
+    "templateId" : "6",
+    "templateContent" : [
+        {
+            "type" : "radioGroup",
+            "value" : "Option 1",
+            "name" : "radio1",
+            "label" : "Please select how would you like to proceed:",
+            "state" : {
+                "disabled" : true,
+                "required" : true
+            },
+            "options" : [
+                "Option 1",
+                "Option 2",
+                "Option 3",
+                "Option 4"
+            ],
+            "validations" : [
+                {
+                    "name" : "required",
+                    "type" : "required",
+                    "message" : "Selection Required"
+                }
+            ]
+        },
+        {
+            "type" : "radioGroup",
+            "value" : "Option",
+            "name" : "radio2",
+            "label" : "Please select one of the options:",
+            "state" : {
+                "disabled" : false,
+                "required" : true
+            },
+            "options" : [
+                "Option 5",
+                "Option",
+                "Option 7",
+                "Option 8"
+            ],
+            "validations" : [
+                {
+                    "name" : "required",
+                    "type" : "required",
+                    "message" : "Selection Required"
+                },
+                {
+                    "name" : "pattern",
+                    "type" : "pattern",
+                    "expression" : "^[a-zA-Z]+$",
+                    "message" : "Accept only text"
+                }
+            ]
+        },
+        {
+            "type" : "radioGroup",
+            "value" : "Option 9",
+            "name" : "radio3",
+            "label" : "Please choose:",
+            "state" : {
+                "disabled" : false,
+                "required" : true
+            },
+            "options" : [
+                "Option 9",
+                "Option 10",
+                "Option 11 !",
+                "Option 12"
+            ],
+            "validations" : [
+                {
+                    "name" : "pattern",
+                    "type" : "pattern",
+                    "expression" : "^[a-zA-Z 0-9]+$",
+                    "message" : "Accept text, spaces and numbers"
+                }
+            ]
+        },
+        {
+            "type" : "radioGroup",
+            "value" : "Option 17",
+            "name" : "radio4",
+            "label" : "Please select one of below:",
+            "state" : {
+                "disabled" : false,
+                "required" : true
+            },
+            "options" : [
+                "Option 13",
+                "Option 14",
+                "Option 15",
+                "Option 16"
+            ]
+        }
+    ]
+}
