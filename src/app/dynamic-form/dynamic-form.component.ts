@@ -28,7 +28,7 @@ export class DynamicFormComponent implements OnInit, AfterContentInit {
     this.grabConfigFromServerIfConfigIdReceivedFromParent();
 
     this.formCreated.emit(this.form);
-
+/*
     timer(5000, 5000)
       .pipe(
         take(5)
@@ -37,7 +37,7 @@ export class DynamicFormComponent implements OnInit, AfterContentInit {
         const newConfig = 'Config' + (Math.floor(Math.random() * 4) + 1);
         console.log(newConfig);
         this.changeConfig(newConfig);
-      });
+      });*/
 
   }
 

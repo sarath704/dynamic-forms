@@ -1,1 +1,1 @@
-<app-dynamic-form *ngIf="config" [config]="config" (submitted)="handleFormSubmit($event)"></app-dynamic-form>
+<app-dynamic-form *ngIf="config" [config]="config" (submitted)="handleFormSubmit($event)" (formCreated)="handleFormCreation($event)" ></app-dynamic-form>
