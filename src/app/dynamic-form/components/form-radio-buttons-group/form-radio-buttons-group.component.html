@@ -1,7 +1,6 @@
 <div [formGroup]="group"
      fxLayout="row"
-     fxLayoutAlign="start center"
-     style="padding: 5px">
+     fxLayoutAlign="start center">
   <div fxLayout="column" fxLayoutAlign="center start" fxLayoutGap="10px">
     <label [ngClass]="{'label': true, 'material-color-disabled': config.state.disabled}" *ngIf="config.label">{{config.label}}</label>
     <mat-radio-group [required]="config.state?.required"

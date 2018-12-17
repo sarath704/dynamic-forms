@@ -1,5 +1,5 @@
 import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { timer } from 'rxjs';
 
 @Component({
@@ -37,9 +37,12 @@ export class FormRadioButtonsGroupComponent implements OnInit {
       this.config.validations.push({
         'name': 'required',
         'type': 'required',
-        'message': 'Selection Required'
+        'message': 'Selection required'
       });
+      // TODO: remind Zori about this new line
+      this.fc.setValidators(Validators.required);
     }
+
   }
 
   setValueToNullIfCurrentValueIsNotInList() {
@@ -49,6 +52,7 @@ export class FormRadioButtonsGroupComponent implements OnInit {
     //    matching value. If there is not such a corresponding radio button, this value persists to be applied in case a new radio button
     //    is added with a matching value.
     if (!this.config.options.includes(this.config.value)) {
+      // log for debugging
       console.log(`RadioGroup [${this.config.name}] preset value ['${this.config.value}'] not present in options list. ` +
       `Resetting it's preset value to [''] `);
       this.config.value = '';
