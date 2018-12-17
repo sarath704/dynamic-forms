@@ -1,5 +1,13 @@
 import { NgModule } from '@angular/core';
-import { MatButtonModule, MatCheckboxModule, MatInputModule, MatRadioModule, MatSelectModule } from '@angular/material';
+import {
+  MatButtonModule,
+  MatCheckboxModule,
+  MatChipsModule,
+  MatIconModule,
+  MatInputModule,
+  MatRadioModule,
+  MatSelectModule
+} from '@angular/material';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 
 import { FlexLayoutModule } from '@angular/flex-layout';
@@ -13,7 +21,10 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     FlexLayoutModule,
     MatAutocompleteModule,
     MatCheckboxModule,
-    MatRadioModule
+    MatRadioModule,
+    MatChipsModule,
+    MatIconModule,
+
   ],
   exports: [
     MatInputModule,
@@ -21,7 +32,10 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     MatButtonModule,
     MatAutocompleteModule,
     MatCheckboxModule,
-    MatRadioModule
+    MatRadioModule,
+    MatChipsModule,
+    MatIconModule,
+
   ],
   entryComponents: []
 })

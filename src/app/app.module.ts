@@ -14,6 +14,7 @@ import { Form3Component } from './form3/form3.component';
 import { Form4Component } from './form4/form4.component';
 import { Form5Component } from './form5/form5.component';
 import { Form6Component } from './form6/form6.component';
+import { Form7Component } from './form7/form7.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { Form6Component } from './form6/form6.component';
     Form4Component,
     Form5Component,
     Form6Component,
+    Form7Component,
   ],
   imports: [
     BrowserModule,

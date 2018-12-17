@@ -1,0 +1,211 @@
+{
+    "_id" : ObjectId("5c1696a9d270312e0e1778e2"),
+    "templateId" : "7",
+    "templateContent" : [
+        {
+            "type" : "chipsAutocomplete",
+            "name" : "chips1",
+            "placeholder" : "Please add options: (requires min 3 chips, max 6 chips, accepts only: digits, letters & space, autocomplete)",
+            "state" : {
+                "autocomplete" : true,
+                "disabled" : false,
+                "required" : false
+            },
+            "selectedOptions" : [
+                "predefinedChip"
+            ],
+            "options" : [
+                "new Chip 1",
+                "new Chip y!!",
+                "new Chip x__",
+                "new Chip 2",
+                "new Chip 3",
+                "new Chip 4",
+                "new Chip 5",
+                "new Chip 6",
+                "new Chip 7",
+                "new Chip 8",
+                "new Chip 9",
+                "new Chip 10",
+                "new Chip 11"
+            ],
+            "validations" : [
+                {
+                    "name" : "patternEachChip",
+                    "type" : "patternEachChip",
+                    "expression" : "^[a-zA-Z 0-9]+$",
+                    "message" : "Accept only letters, digits and spaces"
+                },
+                {
+                    "name" : "minNumberOfChips",
+                    "type" : "minNumberOfChips",
+                    "expression" : "3",
+                    "message" : "Please enter at least 3 values"
+                },
+                {
+                    "name" : "maxNumberOfChips",
+                    "type" : "maxNumberOfChips",
+                    "expression" : "6",
+                    "message" : "Please enter maximum 6 values"
+                }
+            ]
+        },
+        {
+            "type" : "chipsAutocomplete",
+            "name" : "chips2",
+            "placeholder" : "Please add options (requires exactly 5 chips)",
+            "state" : {
+                "autocomplete" : true,
+                "disabled" : false,
+                "required" : false
+            },
+            "selectedOptions" : [
+                "chip1",
+                "chip2",
+                "chip3"
+            ],
+            "options" : [
+                "new Chip 1",
+                "new Chip 2",
+                "new Chip 3",
+                "new Chip 4",
+                "new Chip 5",
+                "new Chip 6",
+                "new Chip 7",
+                "new Chip 8",
+                "new Chip 9",
+                "new Chip 10",
+                "new Chip 11"
+            ],
+            "validations" : [
+                {
+                    "name" : "exactNumberOfChips",
+                    "type" : "exactNumberOfChips",
+                    "expression" : "5",
+                    "message" : "Please enter 5 values"
+                }
+            ]
+        },
+        {
+            "type" : "chipsAutocomplete",
+            "name" : "chips3",
+            "placeholder" : "Please add options (required)",
+            "state" : {
+                "autocomplete" : true,
+                "disabled" : false,
+                "required" : true
+            },
+            "selectedOptions" : [],
+            "options" : [
+                "chip7",
+                "chip8",
+                "chip9",
+                "chip10",
+                "chip11",
+                "chip12",
+                "chip13",
+                "chip14",
+                "chip15",
+                "chip16",
+                "chip17"
+            ],
+            "validations" : []
+        },
+        {
+            "type" : "chipsAutocomplete",
+            "name" : "chips4",
+            "placeholder" : "Please add options (required, autocomplete disabled)",
+            "state" : {
+                "autocomplete" : false,
+                "disabled" : false,
+                "required" : true
+            },
+            "selectedOptions" : [
+                "=chip1",
+                "=chip2",
+                "=chip3",
+                "=chip4",
+                "=chip5",
+                "=chip6"
+            ],
+            "options" : [
+                "-chip7",
+                "-chip8",
+                "-chip9",
+                "-chip10",
+                "-chip11",
+                "-chip12",
+                "-chip13",
+                "-chip14",
+                "-chip15",
+                "-chip16",
+                "-chip17"
+            ],
+            "validations" : []
+        },
+        {
+            "type" : "chipsAutocomplete",
+            "name" : "chips5",
+            "placeholder" : "Please add options (autocomplete, no validations)",
+            "state" : {
+                "autocomplete" : true,
+                "disabled" : false,
+                "required" : false
+            },
+            "selectedOptions" : [
+                "+chip1",
+                "+chip2",
+                "+chip3",
+                "+chip4",
+                "+chip5",
+                "+chip6"
+            ],
+            "options" : [
+                "~-chip7",
+                "~-chip8",
+                "~-chip9",
+                "~-chip10",
+                "~-chip11",
+                "~-chip12",
+                "~-chip13",
+                "~-chip14",
+                "~-chip15",
+                "~-chip16",
+                "~-chip17"
+            ],
+            "validations" : []
+        },
+        {
+            "type" : "chipsAutocomplete",
+            "name" : "chips6",
+            "placeholder" : "Please add options (predefined values, disabled)",
+            "state" : {
+                "autocomplete" : true,
+                "disabled" : true,
+                "required" : false
+            },
+            "selectedOptions" : [
+                "+chip1",
+                "+chip2",
+                "+chip3",
+                "+chip4",
+                "+chip5",
+                "+chip6"
+            ],
+            "options" : [
+                "~-chip7",
+                "~-chip8",
+                "~-chip9",
+                "~-chip10",
+                "~-chip11",
+                "~-chip12",
+                "~-chip13",
+                "~-chip14",
+                "~-chip15",
+                "~-chip16",
+                "~-chip17"
+            ],
+            "validations" : []
+        }
+    ]
+}

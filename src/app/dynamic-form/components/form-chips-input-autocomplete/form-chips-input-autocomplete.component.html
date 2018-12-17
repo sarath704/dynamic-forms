@@ -1,0 +1,41 @@
+<div [formGroup]="group"
+  fxLayout="row"
+  fxLayoutAlign="start center" style="margin-bottom: 10px">
+
+  <mat-form-field class="full-width">
+    <mat-chip-list #chipList class="full-width" [aria-orientation]="'horizontal'" [multiple]="true">
+      <mat-chip
+        *ngFor="let chip of fc.controls; let i = index;"
+        [selectable]="selectable"
+        [removable]="removable"
+        (removed)="remove(i)">
+        {{chip.value}}
+        <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+      </mat-chip>
+      <input
+        [type]="inputType"
+        [placeholder]="config.placeholder"
+        #chipInput
+        [formControl]="chipCtrl"
+        [matAutocomplete]="auto"
+        [matChipInputFor]="chipList"
+        [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+        [matChipInputAddOnBlur]="addOnBlur"
+        (matChipInputTokenEnd)="add($event)">
+
+      <div class="mat-form-field-subscript-wrapper mat-error-container"
+           fxLayout="column" fxLayoutAlign="center start">
+        <ng-container *ngFor="let validation of config.validations" ngProjectAs="mat-error">
+          <mat-error
+            *ngIf="fc.hasError(validation.name)">{{validation.message}}</mat-error>
+        </ng-container>
+      </div>
+    </mat-chip-list>
+    <mat-autocomplete #auto="matAutocomplete" (optionSelected)="selected($event)">
+      <mat-option *ngFor="let option of filteredChips | async" [value]="option"
+                  [ngClass]="{'hide-autocomplete': !autoCompletable}">
+        {{option}}
+      </mat-option>
+    </mat-autocomplete>
+  </mat-form-field>
+</div>

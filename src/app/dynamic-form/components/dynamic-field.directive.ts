@@ -7,6 +7,7 @@ import { FormSelectAutocompleteComponent } from './form-select-autocomplete/form
 import { FormCheckboxComponent } from './form-checkbox/form-checkbox.component';
 import { ListOfControlsComponent } from './list-of-controls/list-of-controls.component';
 import { FormRadioButtonsGroupComponent } from './form-radio-buttons-group/form-radio-buttons-group.component';
+import { FormChipsInputAutocompleteComponent } from './form-chips-input-autocomplete/form-chips-input-autocomplete.component';
 
 const components = {
   input: FormInputComponent,
@@ -15,7 +16,8 @@ const components = {
   selectAutocomplete: FormSelectAutocompleteComponent,
   checkbox: FormCheckboxComponent,
   subGroup: ListOfControlsComponent,
-  radioGroup: FormRadioButtonsGroupComponent
+  radioGroup: FormRadioButtonsGroupComponent,
+  chipsAutocomplete: FormChipsInputAutocompleteComponent
 };
 
 
@@ -41,6 +43,12 @@ export class DynamicFieldDirective implements OnInit {
     this.component.instance.group = this.group;
     this.component.instance.subGroup = this.subGroup;
     this.component.instance.fc = this.fc;
+
+    if (this.config.type === 'chipsAutocomplete') {
+      console.log('config', this.config);
+      // console.log('group', this.group);
+      console.log('fc', this.fc);
+    }
 
   }
 }

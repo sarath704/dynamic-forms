@@ -3,7 +3,6 @@ import { FormInputComponent } from './components/form-input/form-input.component
 import { FormSelectComponent } from './components/form-select/form-select.component';
 import { NgModule } from '@angular/core';
 import { DynamicFormComponent } from './dynamic-form.component';
-import { MatButtonModule, MatInputModule, MatSelectModule } from '@angular/material';
 import { DynamicFieldDirective } from './components/dynamic-field.directive';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
@@ -13,6 +12,7 @@ import { FormSelectAutocompleteComponent } from './components/form-select-autoco
 import { FormCheckboxComponent } from './components/form-checkbox/form-checkbox.component';
 import { ListOfControlsComponent } from './components/list-of-controls/list-of-controls.component';
 import { FormRadioButtonsGroupComponent } from './components/form-radio-buttons-group/form-radio-buttons-group.component';
+import { FormChipsInputAutocompleteComponent } from './components/form-chips-input-autocomplete/form-chips-input-autocomplete.component';
 
 @NgModule({
   declarations: [
@@ -25,13 +25,11 @@ import { FormRadioButtonsGroupComponent } from './components/form-radio-buttons-
     FormCheckboxComponent,
     ListOfControlsComponent,
     FormRadioButtonsGroupComponent,
+    FormChipsInputAutocompleteComponent,
   ],
   imports: [
     BrowserModule,
     ReactiveFormsModule,
-    MatInputModule,
-    MatSelectModule,
-    MatButtonModule,
     FlexLayoutModule,
     MaterialModule
   ],
@@ -43,7 +41,9 @@ import { FormRadioButtonsGroupComponent } from './components/form-radio-buttons-
     FormSelectAutocompleteComponent,
     FormCheckboxComponent,
     ListOfControlsComponent,
-    FormRadioButtonsGroupComponent
+    FormRadioButtonsGroupComponent,
+    FormChipsInputAutocompleteComponent
   ]
 })
-export class DynamicFormModule {}
+export class DynamicFormModule {
+}

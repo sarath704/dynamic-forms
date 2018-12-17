@@ -9,7 +9,7 @@ import {
   Output,
   ViewEncapsulation
 } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, ValidatorFn, Validators } from '@angular/forms';
+import { AbstractControl, FormBuilder, FormControl, FormGroup, ValidatorFn, Validators } from '@angular/forms';
 import { Observable, timer } from 'rxjs';
 import { pluck, retry } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
@@ -36,6 +36,7 @@ export class DynamicFormComponent implements OnInit, AfterContentInit {
   }
 
   ngOnInit() {
+    console.log(`config`, this.config);
     this.grabConfigFromServerIfConfigIdReceivedFromParent();
 
     this.formCreated.emit(this.form);
@@ -92,7 +93,7 @@ export class DynamicFormComponent implements OnInit, AfterContentInit {
     configPath.forEach((field, idx) => {
       // treat each control type individually because of their differences
       let control;
-      switch (field.type.toLowerCase()) {
+      switch (field.type) {
         case 'button':
           return;
         case 'checkbox':
@@ -103,24 +104,15 @@ export class DynamicFormComponent implements OnInit, AfterContentInit {
             this.composeValidators(field.validations || []));
           group.addControl(field.name, control);
           break;
-        case 'subgroup':
+        case 'subGroup':
           let subgroup = this.fb.group({});
           subgroup = this.addControlsBasedOnConfig(field.controls, subgroup);
           group.addControl(field.name, subgroup);
           break;
-
-/*
-        case 'radioGroup':
-          control = new FormControl({
-              value: '',
-              disabled: field.state.disabled,
-              // required: field.state.required
-            },
-            this.composeValidators(field.validations || []));
+        case 'chipsAutocomplete':
+          control = this.fb.array([...field.selectedOptions], this.composeValidatorsFormArray(field.validations || []));
           group.addControl(field.name, control);
           break;
-*/
-
         default:
           control = new FormControl(field.value || '', this.composeValidators(field.validations || []));
           group.addControl(field.name, control);
@@ -143,8 +135,35 @@ export class DynamicFormComponent implements OnInit, AfterContentInit {
           validators.push(Validators.maxLength(parseInt(validation.expression, 10)));
           break;
         case 'pattern':
-          // console.log(`==============validation.expression.pattern`, validation.expression);
           validators.push(Validators.pattern(new RegExp(validation.expression)));
+          break;
+        case 'custom':
+          // to implement if needed
+          break;
+      }
+    });
+    return Validators.compose(validators);
+  }
+
+  composeValidatorsFormArray(validations: any) {
+    const validators: ValidatorFn[] = [];
+    validations.forEach(validation => {
+      switch (validation.type) {
+        case 'required':
+          validators.push(Validators.required);
+          break;
+
+        case 'minNumberOfChips':
+          validators.push(this.minLengthArray(parseInt(validation.expression, 10)));
+          break;
+        case 'maxNumberOfChips':
+          validators.push(this.maxLengthArray(parseInt(validation.expression, 10)));
+          break;
+        case 'exactNumberOfChips':
+          validators.push(this.exactLengthArray(parseInt(validation.expression, 10)));
+          break;
+        case 'patternEachChip':
+          validators.push(this.patternEachValueArray(new RegExp(validation.expression)));
           break;
         case 'custom':
           // to implement if needed
@@ -207,6 +226,46 @@ export class DynamicFormComponent implements OnInit, AfterContentInit {
     this.changeDetector.detectChanges();
     // this.form = null;
     this.grabConfigFromServerIfConfigIdReceivedFromParent();
-
   }
+
+  // TODO: can be moved to a (validation) service
+  // custom validators for FormArrays
+  minLengthArray(min: number) {
+    return (c: AbstractControl): { [key: string]: any } => {
+      if (c.value.length >= min) {
+        return null;
+      }
+      return { 'minNumberOfChips': { valid: false } };
+    };
+  }
+
+  maxLengthArray(max: number) {
+    return (c: AbstractControl): { [key: string]: any } => {
+      if (c.value.length <= max) {
+        return null;
+      }
+      return { 'maxNumberOfChips': { valid: false } };
+    };
+  }
+
+  exactLengthArray(exactValue: number) {
+    return (c: AbstractControl): { [key: string]: any } => {
+      if (c.value.length === exactValue) {
+        return null;
+      }
+      return { 'exactNumberOfChips': { valid: false } };
+    };
+  }
+
+  patternEachValueArray(expression: RegExp) {
+    return (c: AbstractControl): { [key: string]: any } => {
+      const allValueOfArrayMatchPattern = c.value.every((eachValue) => expression.test(eachValue));
+      if (allValueOfArrayMatchPattern) {
+        return null;
+      }
+      return { 'patternEachChip': { valid: false } };
+    };
+  }
+
+
 }
