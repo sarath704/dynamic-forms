@@ -113,6 +113,14 @@ export class DynamicFormComponent implements OnInit, AfterContentInit {
           control = this.fb.array([...field.selectedOptions], this.composeValidatorsFormArray(field.validations || []));
           group.addControl(field.name, control);
           break;
+        case 'datepicker':
+          control = new FormControl({
+              value: null,
+              disabled: field.state.disabled
+            },
+            this.composeValidators(field.validations || []));
+          group.addControl(field.name, control);
+          break;
         default:
           control = new FormControl(field.value || '', this.composeValidators(field.validations || []));
           group.addControl(field.name, control);

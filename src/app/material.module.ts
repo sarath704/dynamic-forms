@@ -2,9 +2,9 @@ import { NgModule } from '@angular/core';
 import {
   MatButtonModule,
   MatCheckboxModule,
-  MatChipsModule,
+  MatChipsModule, MatDatepickerModule,
   MatIconModule,
-  MatInputModule,
+  MatInputModule, MatNativeDateModule,
   MatRadioModule,
   MatSelectModule
 } from '@angular/material';
@@ -24,7 +24,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     MatRadioModule,
     MatChipsModule,
     MatIconModule,
-
+    MatDatepickerModule,
+    MatNativeDateModule
   ],
   exports: [
     MatInputModule,
@@ -35,7 +36,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     MatRadioModule,
     MatChipsModule,
     MatIconModule,
-
+    MatDatepickerModule,
+    MatNativeDateModule
   ],
   entryComponents: []
 })

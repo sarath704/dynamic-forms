@@ -1,0 +1,19 @@
+<div
+  [formGroup]="group"
+  fxLayout="row"
+  fxLayoutAlign="start center" >
+  <mat-form-field class="width-100">
+    <input matInput
+           [matDatepicker]="picker"
+           [placeholder]="config.placeholder"
+           [formControl]="fc"
+           [min]="minimumSelectableDate"
+           [max]="maximumSelectableDate"
+           [matDatepickerFilter]="datePickerFilter">
+    <ng-container *ngFor="let validation of config.validations" ngProjectAs="mat-error">
+      <mat-error *ngIf="fc.hasError(validation.name)">{{validation.message}}</mat-error>
+    </ng-container>
+    <mat-datepicker-toggle matSuffix [for]="picker" [disabled]="config.state?.disabled"></mat-datepicker-toggle>
+    <mat-datepicker #picker [startAt]="startViewAt" [startView]="startView"></mat-datepicker>
+  </mat-form-field>
+</div>

@@ -1,0 +1,252 @@
+{
+    "_id" : ObjectId("5c19172ad270312e0e19bb10"),
+    "templateId" : "8",
+    "templateContent" : [
+        {
+            "type" : "datepicker",
+            "name" : "datepicker1",
+            "placeholder" : "Please select date",
+            "state" : {
+                "disabled" : true,
+                "required" : true
+            },
+            "value" : {},
+            "constraints" : {
+                "minimumSelectableDate" : {
+                    "year" : 2000,
+                    "month" : 11,
+                    "day" : 18
+                },
+                "maximumSelectableDate" : {
+                    "year" : 2001,
+                    "month" : 11,
+                    "day" : 18
+                },
+                "allowSelection" : "allowAllDays",
+                "startView" : "year",
+                "startViewDate" : {
+                    "year" : 2001,
+                    "month" : 11,
+                    "day" : 18
+                }
+            },
+            "validations" : [
+                {
+                    "name" : "required",
+                    "type" : "required",
+                    "message" : "Please provide a date"
+                }
+            ]
+        },
+        {
+            "type" : "datepicker",
+            "name" : "datepicker2",
+            "placeholder" : "only work day",
+            "state" : {
+                "disabled" : false,
+                "required" : false
+            },
+            "value" : {
+                "year" : 2022,
+                "month" : 11,
+                "day" : 18
+            },
+            "constraints" : {
+                "minimumSelectableDate" : {
+                    "year" : 1900,
+                    "month" : 1,
+                    "day" : 1
+                },
+                "maximumSelectableDate" : {
+                    "year" : 2030,
+                    "month" : 12,
+                    "day" : 31
+                },
+                "allowSelection" : "onlyWorkingDays",
+                "startView" : "month",
+                "startViewDate" : {
+                    "year" : 2011,
+                    "month" : 11,
+                    "day" : 18
+                }
+            },
+            "validations" : [
+                {
+                    "name" : "required",
+                    "type" : "required",
+                    "message" : "Date selection required"
+                }
+            ]
+        },
+        {
+            "type" : "datepicker",
+            "name" : "datepicker3",
+            "placeholder" : "only weekends",
+            "state" : {
+                "disabled" : false,
+                "required" : false
+            },
+            "value" : {
+                "year" : 2013,
+                "month" : 11,
+                "day" : 18
+            },
+            "constraints" : {
+                "minimumSelectableDate" : {
+                    "year" : 1900,
+                    "month" : 1,
+                    "day" : 1
+                },
+                "maximumSelectableDate" : {
+                    "year" : 2030,
+                    "month" : 12,
+                    "day" : 31
+                },
+                "allowSelection" : "onlyWeekends",
+                "startView" : "multi-year",
+                "startViewDate" : {
+                    "year" : 2015,
+                    "month" : 11,
+                    "day" : 18
+                }
+            },
+            "validations" : [
+                {
+                    "name" : "required",
+                    "type" : "required",
+                    "message" : "Date selection required"
+                }
+            ]
+        },
+        {
+            "type" : "datepicker",
+            "name" : "datepicker4",
+            "placeholder" : "Select date",
+            "state" : {
+                "disabled" : false,
+                "required" : false
+            },
+            "value" : {
+                "year" : 2018,
+                "month" : 11,
+                "day" : 31
+            },
+            "constraints" : {
+                "minimumSelectableDate" : {
+                    "year" : 1990,
+                    "month" : 1,
+                    "day" : 1
+                },
+                "maximumSelectableDate" : {
+                    "year" : 2030,
+                    "month" : 12,
+                    "day" : 31
+                },
+                "allowSelection" : "allowAllDays",
+                "startView" : "aaa",
+                "startViewDate" : {
+                    "year" : 12015,
+                    "month" : 11,
+                    "day" : 18
+                }
+            },
+            "validations" : [
+                {
+                    "name" : "required",
+                    "type" : "required",
+                    "message" : "Date selection required"
+                }
+            ]
+        },
+        {
+            "type" : "datepicker",
+            "name" : "datepicker5",
+            "placeholder" : "invalid predefined value",
+            "state" : {
+                "disabled" : false,
+                "required" : false
+            },
+            "value" : {},
+            "constraints" : {
+                "minimumSelectableDate" : {},
+                "maximumSelectableDate" : {
+                    "year" : 2030,
+                    "month" : 12,
+                    "day" : 311111
+                },
+                "allowSelection" : "allowAllDays"
+            },
+            "validations" : [
+                {
+                    "name" : "required",
+                    "type" : "required",
+                    "message" : "Date selection required"
+                }
+            ]
+        },
+        {
+            "type" : "datepicker",
+            "name" : "datepicker6",
+            "placeholder" : "readonly",
+            "state" : {
+                "disabled" : true,
+                "required" : true
+            },
+            "value" : {},
+            "constraints" : {
+                "minimumSelectableDate" : {},
+                "maximumSelectableDate" : {
+                    "year" : 2030,
+                    "month" : 12,
+                    "day" : 311111
+                },
+                "allowSelection" : "allowAllDays"
+            },
+            "validations" : [
+                {
+                    "name" : "required",
+                    "type" : "required",
+                    "message" : "Date selection required"
+                }
+            ]
+        },
+        {
+            "type" : "datepicker",
+            "name" : "datepicker7",
+            "placeholder" : "required no validators",
+            "state" : {
+                "disabled" : false,
+                "required" : true
+            },
+            "value" : {},
+            "constraints" : {
+                "minimumSelectableDate" : {},
+                "maximumSelectableDate" : {
+                    "year" : 2030,
+                    "month" : 12,
+                    "day" : 311111
+                },
+                "allowSelection" : "allowAllDays"
+            }
+        },
+        {
+            "label" : "Submit",
+            "name" : "submit",
+            "type" : "button",
+            "color" : "accent",
+            "classes" : {
+                "container" : "flex-100"
+            },
+            "fxLayout" : "row",
+            "fxLayoutXs" : "row",
+            "fxLayoutAlign" : "center center",
+            "fxFlex" : {
+                "divContainer" : "1 1 100",
+                "button" : "0 0 auto",
+                "xs" : {
+                    "button" : "1 1 auto"
+                }
+            }
+        }
+    ]
+}

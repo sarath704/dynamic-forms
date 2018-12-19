@@ -8,6 +8,7 @@ import { FormCheckboxComponent } from './form-checkbox/form-checkbox.component';
 import { ListOfControlsComponent } from './list-of-controls/list-of-controls.component';
 import { FormRadioButtonsGroupComponent } from './form-radio-buttons-group/form-radio-buttons-group.component';
 import { FormChipsInputAutocompleteComponent } from './form-chips-input-autocomplete/form-chips-input-autocomplete.component';
+import { FormDatepickerComponent } from './form-datepicker/form-datepicker.component';
 
 const components = {
   input: FormInputComponent,
@@ -17,9 +18,9 @@ const components = {
   checkbox: FormCheckboxComponent,
   subGroup: ListOfControlsComponent,
   radioGroup: FormRadioButtonsGroupComponent,
-  chipsAutocomplete: FormChipsInputAutocompleteComponent
+  chipsAutocomplete: FormChipsInputAutocompleteComponent,
+  datepicker: FormDatepickerComponent
 };
-
 
 @Directive({
   selector: '[appDynamicField]'

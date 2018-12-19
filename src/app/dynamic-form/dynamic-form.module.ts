@@ -13,6 +13,7 @@ import { FormCheckboxComponent } from './components/form-checkbox/form-checkbox.
 import { ListOfControlsComponent } from './components/list-of-controls/list-of-controls.component';
 import { FormRadioButtonsGroupComponent } from './components/form-radio-buttons-group/form-radio-buttons-group.component';
 import { FormChipsInputAutocompleteComponent } from './components/form-chips-input-autocomplete/form-chips-input-autocomplete.component';
+import { FormDatepickerComponent } from './components/form-datepicker/form-datepicker.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { FormChipsInputAutocompleteComponent } from './components/form-chips-inp
     ListOfControlsComponent,
     FormRadioButtonsGroupComponent,
     FormChipsInputAutocompleteComponent,
+    FormDatepickerComponent,
   ],
   imports: [
     BrowserModule,
@@ -42,7 +44,8 @@ import { FormChipsInputAutocompleteComponent } from './components/form-chips-inp
     FormCheckboxComponent,
     ListOfControlsComponent,
     FormRadioButtonsGroupComponent,
-    FormChipsInputAutocompleteComponent
+    FormChipsInputAutocompleteComponent,
+    FormDatepickerComponent
   ]
 })
 export class DynamicFormModule {
