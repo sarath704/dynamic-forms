@@ -6,7 +6,7 @@
   <ng-container
     *ngFor="let field of config"
     appDynamicField
-    [config]="field"
+    [config]="constructConfig(field)"
     [group]="form"
     [fc]="form.controls[field.name]"
   >

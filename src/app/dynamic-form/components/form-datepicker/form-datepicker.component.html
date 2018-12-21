@@ -9,7 +9,7 @@
            [formControl]="fc"
            [min]="minimumSelectableDate"
            [max]="maximumSelectableDate"
-           [matDatepickerFilter]="datePickerFilter">
+           [matDatepickerFilter]="datePickerFilter" autocomplete="off">
     <ng-container *ngFor="let validation of config.validations" ngProjectAs="mat-error">
       <mat-error *ngIf="fc.hasError(validation.name)">{{validation.message}}</mat-error>
     </ng-container>

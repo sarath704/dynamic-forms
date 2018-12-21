@@ -13,6 +13,7 @@ import { AbstractControl, FormBuilder, FormControl, FormGroup, ValidatorFn, Vali
 import { Observable, timer } from 'rxjs';
 import { pluck, retry } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
+import { DatePickerConfig, isBoolean } from './components/form-datepicker/form-datepicker.config.model';
 
 @Component({
   selector: 'app-dynamic-form',
@@ -29,6 +30,7 @@ export class DynamicFormComponent implements OnInit, AfterContentInit {
   @Output() formCreated: EventEmitter<FormGroup> = new EventEmitter<FormGroup>();
 
   public form: FormGroup;
+  public mapOfConfigs: Map<string, DatePickerConfig> = new Map<string, DatePickerConfig>();
 
   constructor(private fb: FormBuilder,
               private http: HttpClient,
@@ -99,7 +101,7 @@ export class DynamicFormComponent implements OnInit, AfterContentInit {
         case 'checkbox':
           control = new FormControl({
               value: '',
-              disabled: field.state.disabled
+              disabled: (field.state || {}).disabled  && isBoolean((field.state || {}).disabled)  || false
             },
             this.composeValidators(field.validations || []));
           group.addControl(field.name, control);
@@ -116,7 +118,7 @@ export class DynamicFormComponent implements OnInit, AfterContentInit {
         case 'datepicker':
           control = new FormControl({
               value: null,
-              disabled: field.state.disabled
+              disabled: (field.state || {}).disabled  && isBoolean((field.state || {}).disabled)  || false
             },
             this.composeValidators(field.validations || []));
           group.addControl(field.name, control);
@@ -234,6 +236,26 @@ export class DynamicFormComponent implements OnInit, AfterContentInit {
     this.changeDetector.detectChanges();
     // this.form = null;
     this.grabConfigFromServerIfConfigIdReceivedFromParent();
+  }
+
+  constructConfig(config: any): any {
+    switch (config.type) {
+      case 'datepicker':
+        if (!this.mapOfConfigs.has(config.name)) {
+          if (config.name === 'datepicker8') {
+          console.log(config.name, ' - initial config - ');
+          console.log(config);
+          }
+          const newConfig = new DatePickerConfig(config);
+          this.mapOfConfigs.set(config.name, newConfig);
+          return newConfig;
+        } else {
+          return this.mapOfConfigs.get(config.name);
+        }
+      default:
+        return config;
+    }
+
   }
 
   // TODO: can be moved to a (validation) service
