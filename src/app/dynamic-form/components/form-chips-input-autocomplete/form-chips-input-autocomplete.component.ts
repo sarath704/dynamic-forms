@@ -97,6 +97,8 @@ export class FormChipsInputAutocompleteComponent implements OnInit, AfterContent
     }
     const chips = this.fc as FormArray;
     chips.push(this.fb.control(event.option.viewValue.trim()));
+    // clear input
+    this.chipInput.nativeElement.value = '';
   }
 
   valueIsAlreadyPresentInFormArray(formArray: FormArray, valueToSearchFor) {
